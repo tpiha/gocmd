@@ -1,0 +1,17 @@
+# command for deploying picostats
+
+LOCAL mkdir picostatsnew
+LOCAL cp ../picostats picostatsnew/
+LOCAL tar -czf picostatsnew.tar.gz picostatsnew/
+LOCAL rm -rf picostatsnew
+
+PUT picostatsnew.tar.gz
+
+RUN tar -xzf picostatsnew.tar.gz
+RUN rm -rf picostats
+RUN mv picostatsnew picostats
+RUN rm picostatsnew.tar.gz
+
+LOCAL rm picostatsnew.tar.gz
+
+SUDO supervisorctl reload

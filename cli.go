@@ -55,8 +55,8 @@ Commands:
 
 Flags:
 
-    -d,   --dev                 run in development mode (more logging)
-    -h,   --help                print this message
+    -d,   --dev     run in development mode (more logging)
+    -h,   --help    print this message
 `
 	fmt.Println(helpMessage)
 }
